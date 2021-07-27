@@ -1,0 +1,12 @@
+it('file upload', function(){
+        cy.visit('https://dev.devmobo.com/login')
+        cy.get('#email').type('lokzz05000@gmail.com')
+        cy.get('#password').type('Lokesh@52510')
+        cy.get('#loginButton').click()
+        cy.get(':nth-child(4) > .nav-link').click()
+        const filepath = 'images/HOA1.docx'
+        cy.contains('Home').click
+        cy.get('#inputFile').attachFile(filepath)
+        cy.get('.btn').click()
+
+    })
